@@ -65,7 +65,7 @@ const MyForm = ({ addNumberToList, setRequestedLocation, userList, currentNumber
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    if (location !== null && location !== '') {
+    if (location !== null && location !== '' && userList[location - 1] === null) {
       const locationIndex = Number(location) - 1;
       addNumberToList(locationIndex, currentNumber);
       setLocation(''); // Clear
